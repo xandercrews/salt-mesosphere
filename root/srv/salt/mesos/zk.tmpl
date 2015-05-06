@@ -1,0 +1,5 @@
+zk://
+{%- for addr in salt['mine.get']('G@mesos:master and *', 'network.ip_addrs', expr_form='compound').values() -%}
+{{ addr[0] }}:2181{% if not loop.last %},{% endif %}
+{%- endfor -%}
+/mesos

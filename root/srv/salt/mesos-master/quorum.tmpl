@@ -1,0 +1,2 @@
+{% set zoonodes = salt['mine.get']('G@mesos:master and *', 'network.ip_addrs', expr_form='compound')|length -%}
+{{ (zoonodes/2)|round(0, method='ceil')|int }}

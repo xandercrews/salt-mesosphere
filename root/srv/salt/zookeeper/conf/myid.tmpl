@@ -1,0 +1,1 @@
+{{ salt['network.interfaces']()['eth0']['inet'][0]['address'].split('.')[-1] }}
